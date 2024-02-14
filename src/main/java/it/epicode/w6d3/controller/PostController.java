@@ -84,7 +84,7 @@ public class PostController {
 
         try {
             postService.eliminaPost(id);
-            return CustomResponse.emptyResponse("Post con id=" + id + " cancellato", HttpStatus.OK);
+            return CustomResponse.emptyResponse("Post con id = " + id + " cancellato", HttpStatus.OK);
         }
         catch (NotFoundException e){
             return CustomResponse.error(e.getMessage(), HttpStatus.NOT_FOUND);
