@@ -37,7 +37,6 @@ public class AutoreService {
 
     public Autore salvaAutore(Autore autore){
 
-        autore.setAvatar("https://ui-avatars.com/api/?name=" + autore.getNome() + "+" + autore.getCognome());
         return autoreRepository.save(autore);
 
 
@@ -64,6 +63,13 @@ public class AutoreService {
         Autore a = cercaAutorePerId(id);
         autoreRepository.delete(a);
 
+    }
+
+    public Autore uploadAutore(int id, String url) throws NotFoundException{
+        Autore autore = cercaAutorePerId(id);
+
+        auto.setLogo(url);
+        return autoRepository.save(auto);
     }
 
 }
