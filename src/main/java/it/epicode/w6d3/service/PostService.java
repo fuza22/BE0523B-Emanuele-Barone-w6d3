@@ -77,5 +77,11 @@ public class PostService {
 
     }
 
+    public Post uploadCover(int id, String url) throws NotFoundException{
+        Post post = cercaPostPerId(id);
+
+        post.setCover(url);
+        return postRepository.save(post);
+    }
 
 }
